@@ -16,7 +16,6 @@ module.exports = {
           presets: [
             'react',
             'stage-0',
-            // presets option to build file to satisfy browser version
             ['env', {targets: { browser: ['last 2 versions'] }}]
           ]
         }
