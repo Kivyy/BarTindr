@@ -26,6 +26,8 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "express": "^4.16.2",
+    "http": "0.0.0",
+    "morgan": "^1.9.0",
     "nodemon": "^1.14.11",
     "npm-run-all": "^4.1.2",
     "react": "^16.2.0",
