@@ -1,17 +1,16 @@
 const express = require('express');
-const http = require('http');
-const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const path = require('path');
+const http = require('http');
 const app = express();
 
 //App Setup
 app.use(morgan('combined'));
-app.use(bodyParser.json({type: '*/*'}));
+
 app.use(express.static('public'));
 
-app.get('*', (req,res) => {
-  res.sendFile(path.resolve('./public/index.html'));
+app.get('/*', (req,res) => {
+  res.sendFile(path.resolve(__dirname,'public','index.html'));
 })
 
 //Server Setup

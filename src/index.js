@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter, Route} from 'react-router-dom';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
 // React Components
 import App from './components/App'
@@ -11,8 +11,10 @@ ReactDOM.render(
   <BrowserRouter>
     <div>
       <Navbar/>
-      <Route exact path="/" component={App}/>
-      <Route path='/test' component={Test}/>
+      <Switch>
+        <Route path="/" component={App}/>
+        <Route path='/test' component={Test}/>
+      </Switch>
     </div>
   </BrowserRouter>
 ,document.getElementById('root')

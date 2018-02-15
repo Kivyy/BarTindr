@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm-run-all --parallel dev:*",
-    "dev:runClient": "nodemon clientserver.js",
+    "dev:startClient": "nodemon clientserver.js",
     "dev:client": "webpack webpack.config.js -w"
   },
   "repository": {
