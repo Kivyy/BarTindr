@@ -1,11 +1,9 @@
 const express = require('express');
-const morgan = require('morgan');
 const path = require('path');
 const http = require('http');
 const app = express();
 
 //App Setup
-app.use(morgan('combined'));
 
 app.use(express.static('public'));
 
