@@ -1,9 +1,9 @@
 const router = require('express').Router();
 const yelp = require('yelp-fusion')
-const yelpConfig = require('../yelpconfig')
+const configKey = require('../services/keys')
 
 
-const client = yelp.client(yelpConfig.token);
+const client = yelp.client(configKey.yelp.token);
 
 
 router.get('/bars',(req,res) => {
