@@ -3,24 +3,12 @@ const bodyParser = require('body-parser');
 
 
 const app = express();
-const yelp = require('yelp-fusion')
-const yelpConfig = require('./yelpconfig')
-
-
-const client = yelp.client(yelpConfig.token);
+const authRoutes = require('./routes/auth-routes');
+const yelpRoutes = require('./routes/yelp-routes');
 
 app.use(bodyParser.json());
-
-
-app.get('/bars',(req,res) => {
-  client.search({
-    location: "Manhattan"
-  }).then((response) => {
-    res.send(response.jsonBody.businesses[0]);
-  }).catch((err) => {
-    res.send(404);
-  })
-})
+app.use('/auth',authRoutes);
+app.use('/api', yelpRoutes);
 
 app.listen(3000,(err) => {
   if(err){
