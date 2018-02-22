@@ -1,12 +1,14 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const passportSetup = require('./services/passport-setup');
+const passport = require('passport');
 
 const app = express();
 const authRoutes = require('./routes/auth-routes');
 const yelpRoutes = require('./routes/yelp-routes');
 
 app.use(bodyParser.json());
+app.use(passport.initialize());
 app.use('/auth',authRoutes);
 app.use('/api', yelpRoutes);
 
