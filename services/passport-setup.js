@@ -1,5 +1,6 @@
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20');
+
 const configKey = require('./keys');
 
 passport.use(
@@ -9,9 +10,9 @@ passport.use(
   clientID: configKey.google.clientID,
   clientSecret: configKey.google.clientSecret
 },(accessToken,refreshToken,profile,done) => {
-  // passport callback function
+  // passport callback functionv
   if(profile){
-    done(null,{authenticate: true});
+      done(null,{authenticate: true});
   }
   })
 )

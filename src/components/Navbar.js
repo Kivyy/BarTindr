@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
-const auth = localStorage.getItem('authenticate');
 
 class Navbar extends Component{
 
 
 
   render(){
+    const auth = localStorage.getItem('test');
     if (auth) {
       return(
         <div>

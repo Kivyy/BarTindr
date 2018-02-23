@@ -11,7 +11,6 @@ router.get('/login', passport.authenticate('google',{
 // callback route for google to redirect and passport middleware to retrieve information
 
 router.get('/google/redirect', passport.authenticate('google', {session: false}), (req,res) => {
-  localStorage.setItem('authenticate', 'true');
   res.redirect("http://localhost:8080");
 })
 
